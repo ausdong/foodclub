@@ -1,0 +1,14 @@
+{% include 'dvc/_header.html' %}
+
+<div class="fighters_list">
+{% if fighters_list %}
+    {% for fighter in fighters_list %}
+        <h2>{{ fighter.name }}</h2>
+        <p>{{ fighter.bio }}</p>
+    {% endfor %}
+{% else %}
+    No registered fighters.
+{% endif %}
+
+</div>
+

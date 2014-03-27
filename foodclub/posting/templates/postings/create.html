@@ -1,0 +1,19 @@
+{% include 'postings/_header.html' %}
+{% load staticfiles %}
+
+<script type="text/javascript" src="{% static 'postings/fight.js' %}"> </script>
+
+
+<div class="prompt_text">
+<h1>Here is a title</h1>
+</div>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p> {% endif %}
+
+
+    <form action="" method="post">
+        {% csrf_token %}
+        name
+        <input style="float: left;" id="left" class="fight_image" type="image" src="" name="winner" id="choice0" value="" />
+    </form>
+

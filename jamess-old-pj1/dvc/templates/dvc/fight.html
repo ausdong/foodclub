@@ -1,0 +1,24 @@
+{% include 'dvc/_header.html' %}
+{% load staticfiles %}
+
+<script type="text/javascript" src="{% static 'dvc/fight.js' %}"> </script>
+
+
+<div class="prompt_text">
+<h1>Round {{round}} - {{ prompt.prompt_text }}</h1>
+</div>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p> {% endif %}
+
+
+    <form action="{% url 'dvc:vote' prompt.id %}" method="post">
+        {% csrf_token %}
+        {{ choice.name }}
+        <input style="float: left;" id="left" class="fight_image" type="image" src="{{ images.0 }}" name="winner" id="choice0" value="{{ fighters_list.0.id }}" />
+    </form>
+
+    <form action="{% url 'dvc:vote' prompt.id %}" method="post">
+        {% csrf_token %}
+        {{ choice.name }}
+        <input style="float:right; margin-top: -14px;" id="right" class="fight_image" type="image" src="{{ images.1 }}" name="winner" id="choice1" value="{{ fighters_list.1.id }}" />
+    </form>

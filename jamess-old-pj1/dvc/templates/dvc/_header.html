@@ -1,0 +1,17 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'dvc/style.css' %}" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<div class="menu">
+    <ul id="nav">
+    <li><a href="{% url 'dvc:index' %}">DvC</a></li>
+    <li><a href="{% url 'dvc:about' %}">About</a></li>
+    <li><a href="{% url 'dvc:fighters' %}">Fighters</a></li>
+    <li><a href="{% url 'dvc:results' %}">Results</a></li>
+    </ul>
+</div>
+
+
+<div class="author_info">
+    (c) 2014 James Ding 
+</div>
