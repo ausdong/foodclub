@@ -1,0 +1,21 @@
+ {% extends 'base.html' %}
+     
+    {% block title %}{{post.name}}{% endblock %}
+     
+    {% block content %}
+    <article>
+        <header>
+            <h1> {{post.name}} </h1>
+            <p>
+                Posted on
+                <time datetime="{{post.time|date:"c"}}">
+                {{post.time|date}}
+                </time>
+            </p>
+        </header>
+        <p class="description">
+            {{post.dsc}}
+        </p>
+        {{post.content|safe}}
+    </article>
+    {% endblock %}
