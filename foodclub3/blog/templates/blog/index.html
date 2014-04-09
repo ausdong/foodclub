@@ -1,86 +1,96 @@
-<br></br>
-        <h1> Food Club </h1>
+{% extends 'base.html' %}
+
+{% block title %} Food Club {% endblock %}
+{% block content %}
+
+	<div id="logo">
+		<div id="logotext">
+			<p> Food Club </p>
+		</div>
+	</div>
+	<div id="navbar">
+		<p>navigation bar goes here</p>
+	</div>
 
 	<!--begin-->	
 	<style type="text/css">
 	
-	ul#grid {
-		padding: 0;
-		list-style: none;
-		margin: 20px auto 0;
-		width: 1366px;  
-	}
+		ul#grid {
+			padding: 0;
+			list-style: none;
+			margin: 20px auto 0;
+			width: 1366px;  
+		}
 
-	#grid li {
-		float: left;
-		padding: 0;
-		margin: 0 5px 10px 5px;
-	} 
-	.portfolio {
-  		padding: 20px;
-		margin-left: 0px; margin-right: 0px;
-		width: 500px;
-		font-family: 'GraublauWeb', arial, serif; 
-		text-align: center;
-	}
-  	.portfolio h3 {
-		text-align: left;
-		clear: both;
-		font-size: 19px;
-		font-weight: normal;
-		color: #58595b;
-	}
-	.portfolio p {
-		text-align:left;
-		font-size: 15px;
-		font-weight: normal;
-		color: #58595b;
-	}
+		#grid li {
+			float: left;
+			padding: 0;
+			margin: 0 5px 10px 5px;
+		} 
+		.portfolio {
+			padding: 20px;
+			margin-left: 0px; margin-right: 0px;
+			width: 500px;
+			font-family: 'GraublauWeb', arial, serif; 
+			text-align: center;
+		}
+		.portfolio h3 {
+			text-align: left;
+			clear: both;
+			font-size: 19px;
+			font-weight: normal;
+			color: #58595b;
+		}
+		.portfolio p {
+			text-align:left;
+			font-size: 15px;
+			font-weight: normal;
+			color: #58595b;
+		}
 
 
-	#grid li a:hover img {
-		opacity:0.7;  filter:alpha(opacity=70);
-	}
-	#grid li img {
-		background-color: lightgray;
-		padding: 3px; margin: 0;
-		width: 262px;
-		height: 197px;
-	}
-	#grid li a {
-		display: block;
-	}
+		#grid li a:hover img {
+			opacity:0.7;  filter:alpha(opacity=70);
+		}
+		#grid li img {
+			background-color: lightgray;
+			padding: 3px; margin: 0;
+			width: 262px;
+			height: 197px;
+		}
+		#grid li a {
+			display: block;
+		}
 	</style>
 	<div class="portfolio">
-	<ul id="grid">
-	   <li><a href="file:///C:/Users/Z/Documents/GitHub/foodclub/foodclub3/blog/templates/blog/post.html"><img src="1.jpg"></a></li>
-	   <li><a href="#"><img src="1.jpg"></a></li>
-	   <li><a href="#"><img src="1.jpg"></a></li>
-	   <li><a href="#"><img src="1.jpg"></a></li>
-	   <li><a href="#"><img src="1.jpg"></a></li>
-	   <li><a href="#"><img src="1.jpg"></a></li>
-	   <li><a href="#"><img src="1.jpg"></a></li>
-	   <li><a href="#"><img src="1.jpg"></a></li>
-	</ul>
+		<ul id="grid">
+			<li><a href="/{{post.name}}"><img src="1.jpg"></a></li>
+			<li><a href="#"><img src="1.jpg"></a></li>
+			<li><a href="#"><img src="1.jpg"></a></li>
+			<li><a href="#"><img src="1.jpg"></a></li>
+			<li><a href="#"><img src="1.jpg"></a></li>
+			<li><a href="#"><img src="1.jpg"></a></li>
+			<li><a href="#"><img src="1.jpg"></a></li>
+			<li><a href="#"><img src="1.jpg"></a></li>
+		</ul>
 	</div>
- 	<!--end-->	
+	<!--end-->	
 
-     	{% for post in posts %}
-     	<div class="post">
-
+	{% for post in posts %}
+	<div class="post">
+		<h3>
+			<a href="/{{post.name}}">
+				{{post.name}}
+			</a>
+		</h3>
+		<p>{{post.dsc}}</p>
+		<p>
+			Posted on
+			<time datetime="{{post.time|date:"c"}}">
+			{{post.created|date}}
+			</time>
+		</p>
+	</div>
 	
-           <h3>
-           	<a href="/{{post.name}}">
-                    {{post.name}}
-                </a>
-            </h3>
-            <p>{{post.dsc}}</p>
-            <p>
-                Posted on
-                <time datetime="{{post.time|date:"c"}}">
-                {{post.created|date}}
-                </time>
-            </p>
-	</div>
-      {% endfor %}
-    {% endblock %}
+	{% endfor %}
+{% endblock %}

@@ -1,0 +1,40 @@
+ body{
+        background-color: #fdfdfd;
+        color: #2e2e2e;
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        line-height: 28px;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    div.content{
+        border: 1px solid #fbfbfb;
+        background-color: #fff;
+        max-width: 100%;
+        width: 96%;
+        padding: 2%;
+        margin: 28px  auto;
+    }
+#navbar {
+	    height:50px;
+        width: 100%;
+        background-color:#efefef;
+        color:#FFFFFF;
+        margin-bottom:10px;
+}
+#logo {
+		height: 50%;
+		width: 10%;
+		position:relative;
+		left:20px;
+		top:15px;
+		border: #000000 1px solid;
+		background-color:#fdfdfd;
+}
+#logotext {
+		font-size:large;
+		font-weight:bold;
+        color: black;
+        margin-left: 15px;
+        margin-top: 1px;
+}
