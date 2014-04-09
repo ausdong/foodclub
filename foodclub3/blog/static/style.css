@@ -1,5 +1,5 @@
  body{
-        background-color: #fdfdfd;
+        background-color: #fbfbfb;
         color: #2e2e2e;
         margin: 0;
         padding: 0;
@@ -9,7 +9,7 @@
     }
     div.content{
         border: 1px solid #fbfbfb;
-        background-color: #fff;
+        background-color: #fbfbfb;
         max-width: 100%;
         width: 96%;
         padding: 2%;
@@ -30,7 +30,7 @@
 		width: 100%;
 		position:relative;
 		left:20px;
-		background-color:#fff;
+		background-color:#fbfbfb;
 }
 #logotext {
 		font-size:xx-large;
