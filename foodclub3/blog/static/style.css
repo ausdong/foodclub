@@ -16,25 +16,57 @@
         margin: 28px  auto;
     }
 #navbar {
-	    height:50px;
+	    height:30px;
         width: 100%;
-        background-color:#efefef;
-        color:#FFFFFF;
+        background-color:#e0e0e0;
+        color:black;
         margin-bottom:10px;
 }
+#navbartxt {
+
+		margin-left:14%;
+}
 #logo {
-		height: 50%;
-		width: 10%;
+		width: 100%;
 		position:relative;
 		left:20px;
-		top:15px;
-		border: #000000 1px solid;
-		background-color:#fdfdfd;
+		background-color:#fff;
 }
 #logotext {
-		font-size:large;
+		font-size:xx-large;
 		font-weight:bold;
         color: black;
         margin-left: 15px;
         margin-top: 1px;
+}	
+ul#grid {
+		padding: 0;
+		list-style: none;
+		margin: 20px auto 0;
+		width: 100%  
+}
+
+#grid li {
+		float: left;
+		padding: 0;
+		margin: 0 5px 10px 5px;
+} 
+.portfolio {
+		padding: 20px;
+		margin-left: 0px; margin-right: 0px;
+		width: 100%;
+		font-family: 'GraublauWeb', arial, serif; 
+		text-align: center;
+}
+#grid li a:hover img {
+	opacity:0.7;  filter:alpha(opacity=70);
+}
+#grid li img {
+	background-color: lightgray;
+	padding: 3px; margin: 0;
+	width: 262px;
+	height: 197px;
+}
+#grid li a {
+	display: block;
 }
