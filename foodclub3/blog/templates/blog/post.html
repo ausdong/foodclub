@@ -2,34 +2,33 @@
 
 {% block title %} Food Club {% endblock %}
 {% block content %}
-<body>
-	<header>
-	<h1>Food Club</h1>
-	</header>
- <nav>
- <div id="menu">
-<ul>
-
-<li><a href="#">Home</a></li>
-<li><a href="@">Post</a></li>
-<li><a href="#">Contact us</a></li>
-</ul>
+<div id="logo">
+	<div id="logotext">
+		<p> Food Club </p>
+	</div>
 </div>
-<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}style.css">
-</nav>
-    <article>
-		<h2> post.name </h2>
+<div id="navbar">
+		<a href="/">Home</a>
+		<a href="@">Submit a Post</a>
+</div>
+	<hr>
+<body>
+	<h2>{{post.name}}</h2>
+	<div id="postimg">
+		<img src="{{STATIC_URL}}images/{{post.img}}">
+	</div>
+    <br>
+	<article>
 		<p>
 			Posted on
 				<time datetime="{{post.time|date:"c"}}">
 				{{post.time|date}}
 				</time>
 		</p>
-		<p class="description">
+		<p>
 			{{post.dsc}}
 		</p>
-		{{post.content|safe}}
 	</article>
 </body>
-</html>	
+
 {% endblock %}

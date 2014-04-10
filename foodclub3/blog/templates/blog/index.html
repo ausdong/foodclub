@@ -9,9 +9,8 @@
 		</div>
 	</div>
 	<div id="navbar">
-		<div id="navbartxt">
-			<p>navigation bar goes here<p>
-		</div>
+		<a href="/">Home</a>
+		<a href="@">Submit a Post</a>
 	</div>
 	
 	<style type="text/css">
@@ -24,7 +23,7 @@
 	<div class="portfolio">
 		<ul id="grid">
 			{% for post in posts %}
-			<li><a href="/{{post.name}}"><img src="http://studylogic.net/wp-content/uploads/2013/01/burger.jpg"></a></li>
+			<li><a href="/{{post.name}}"><img src="{{STATIC_URL}}images/{{post.img}}"></a></li>
 			{% endfor %}
 		</ul>
 	</div>

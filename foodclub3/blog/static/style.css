@@ -1,9 +1,9 @@
  body{
         background-color: #fbfbfb;
         color: #2e2e2e;
-        margin: 0;
+        margin: 50px;
         padding: 0;
-        font-size: 14px;
+        font-size: 17px;
         line-height: 28px;
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
@@ -69,4 +69,7 @@ ul#grid {
 }
 #grid li a {
 	display: block;
+}
+#postimg  img{
+	width:500px;
 }

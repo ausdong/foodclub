@@ -12,6 +12,7 @@ class Post(models.Model):
     dsc = models.CharField(max_length=200)
     catID = models.ForeignKey(Category)
     time = models.DateTimeField()
+    img = models.FilePathField(path="/home")
 			
 class Image(models.Model):
     path = models.FilePathField(path="/home")
