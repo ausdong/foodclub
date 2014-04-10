@@ -12,3 +12,6 @@ def post(request, name):
 	post = get_object_or_404(Post, name=name)
 	# now return the rendered template
 	return render(request, 'blog/post.html', {'post': post})
+
+def submit(request):
+        return render(request, 'blog/submit.html')
