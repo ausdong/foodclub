@@ -1,5 +1,7 @@
-<html>
-<link rel="stylesheet" type="text/css" href="C:\Users\Z\Documents\GitHub\foodclub\foodclub3\blog\static\style.css">
+{% extends 'base.html' %}
+
+{% block title %} Food Club {% endblock %}
+{% block content %}
 <body>
 	<header>
 	<h1>Food Club</h1>
@@ -29,4 +31,5 @@
 		{{post.content|safe}}
 	</article>
 </body>
-</html>
+</html>	
+{% endblock %}
