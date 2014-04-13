@@ -43,13 +43,15 @@ ul#grid {
 		padding: 0;
 		list-style: none;
 		margin: 20px auto 0;
-		width: 100%  
+		width: 100%; 
 }
 
 #grid li {
 		float: left;
 		padding: 0;
-		margin: 0 5px 10px 5px;
+		margin: 0;
+		width:262px;
+		height:197px;
 } 
 .portfolio {
 		padding: 20px;
@@ -62,14 +64,13 @@ ul#grid {
 	opacity:0.7;  filter:alpha(opacity=70);
 }
 #grid li img {
-	background-color: lightgray;
-	padding: 3px; margin: 0;
-	width: 262px;
-	height: 197px;
+	background-color: black;
+	padding:0; 
+	margin: 0;
+	max-width: 100%;
+	max-height: 100%;
 }
-#grid li a {
-	display: block;
-}
+
 #postimg  img{
 	width:500px;
 }
