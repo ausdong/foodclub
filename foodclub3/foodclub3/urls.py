@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
-
+from django.conf.urls.static import static
+from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
 
@@ -9,7 +10,7 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', 'blog.views.index'),
     url(r'^submit/', 'blog.views.submit'),
     url(r'^(?P<name>[\w\-]+)/$', 'blog.views.post'),
-)
+    url(r'^$', 'blog.views.index'),
+) + static(settings.MEDIA_URL)

@@ -15,7 +15,7 @@
 <body>
 	<h2>{{post.name}}</h2>
 	<div id="postimg">
-		<img src="{{STATIC_URL}}images/{{post.img}}">
+		<img src="{{MEDIA_URL}}{{post.imgID.path}}">
 	</div>
     <br>
 	<article>

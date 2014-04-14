@@ -11,23 +11,9 @@
 	<a href="/">Home</a>
 	<a href="#">Submit a Post</a>
 </div>	
-<article>
-
-	<form method="POST"	action="../upload/" enctype="multipart/form-data"> 
-	<label for='name'>Title:</label>
-	<br>
-	<input type="text" name="name" >
-	<br>
-	<label for='message'>Description:</label>
-	<br>
-	<input type="text" name="message"></textarea>
-	<br>
-	<label for='uploaded_file'>Select an Image to Upload:</label>
-	<br>
-	<input type="file" name="uploaded_file">
-	<br><br>
-	<input type="submit" value="Submit" name='submit'>
+	<form method="POST"	action="/submit/" enctype="multipart/form-data"> 
 	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="Submit" name='submit'>
 	</form>
-</article>
 {% endblock %}
