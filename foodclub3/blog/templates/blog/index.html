@@ -14,7 +14,7 @@
 	</div>	
 	<div class="portfolio">
 		<ul id="grid">
-			{% for post in posts %}
+			{% for post in posts reversed %}
 			<li><a href="{{post.name|urlencode}}"><img src="{{MEDIA_URL}}{{post.imgID.path}}"></a></li>
 			{% endfor %}
 		</ul>
