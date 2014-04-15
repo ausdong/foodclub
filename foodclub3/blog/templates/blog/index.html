@@ -3,6 +3,7 @@
 {% block title %} Food Club {% endblock %}
 {% block content %}
 
+
 	<div id="logo">
 		<div id="logotext">
 			<p> Food Club </p>
@@ -12,12 +13,39 @@
 		<a href="/">Home</a>
 		<a href="submit">Submit a Post</a>
 	</div>	
+
+
+
 	<div class="portfolio">
 		<ul id="grid">
 			{% for post in posts reversed %}
-			<li><a href="{{post.name|urlencode}}"><img src="{{MEDIA_URL}}{{post.imgID.path}}"></a></li>
+			<li><a class="lightbox_trigger" href="#"><img src="{{MEDIA_URL}}{{post.imgID.path}}">{{post.name|urlencode}}</a></li>
 			{% endfor %}
 		</ul>
+	</div>
+	
+	
+	<script>
+		$(document).ready(function(){
+			$('.lightbox_trigger').click(function() {
+				$('#lightbox').show();
+				$('#gallery-container').show();
+			});
+			$('#lightbox').click(function() {
+				$('#lightbox').hide();
+				$('#gallery-container').hide();
+			});
+		
+		});
+	</script>
+	
+
+	
+	<div id="lightbox">
+	</div>
+	<div id="gallery-container">
+			<img src="">	
+			Hello this is where description and gallery will go.
 	</div>
 	
 	
