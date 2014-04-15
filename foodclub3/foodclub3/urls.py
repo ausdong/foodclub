@@ -13,4 +13,4 @@ urlpatterns = patterns('',
     url(r'^submit/', 'blog.views.submit'),
     url(r'^(?P<name>[\w\-]+)/$', 'blog.views.post'),
     url(r'^$', 'blog.views.index'),
-) + static(settings.MEDIA_URL)
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
