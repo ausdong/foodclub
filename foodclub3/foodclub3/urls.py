@@ -15,5 +15,4 @@ urlpatterns = patterns('',
 	url(r'^(?P<name>[\w\-]+)/$', 'blog.views.post'),
 	url(r'^(?P<name>[\w|\W]+)/$', 'blog.views.post'),
 	url(r'^$', 'blog.views.index'),
-	(r'^comments/', include('django.contrib.comments.urls')),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
