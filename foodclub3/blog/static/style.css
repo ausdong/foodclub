@@ -88,19 +88,19 @@ ul#grid {
 		z-index:998;
 		display:none;
 	}
-	#gallery-container {
-		width: 80%;
+	.gallery-container {
 		position:fixed; /* keeps the lightbox window in the current viewport */
 		background-color: white;
+		height:80%;
 		top: 10%;
-		left: 10%;
-		min-height: 80%;
-		opacity: 1;
-		margin-right: 10%;
+		margin-left: 20%;
+		margin-right:20%;
 		border-radius: 10px;
-		border: 5px solid #ff0099;
+		border: 15px solid gray;
 		z-index:999;
 		display:none;
+		clear:both;
+		overflow:hidden;
 	}
 	
 

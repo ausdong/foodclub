@@ -19,33 +19,37 @@
 	<div class="portfolio">
 		<ul id="grid">
 			{% for post in posts reversed %}
-			<li><a class="lightbox_trigger" href="#"><img src="{{MEDIA_URL}}{{post.imgID.path}}">{{post.name|urlencode}}</a></li>
+			<li><img class="lightbox_trigger_{{ post.id }}" src="{{MEDIA_URL}}{{post.imgID.path}}" ></li>
+			
+			<div class="gallery-container" id="gallery-container_{{ post.id }}" style="display:none;">
+			<img id="lightboximg" src="{{MEDIA_URL}}{{post.imgID.path}}" style="width:100%;">	
+				<div style="padding:10%;">{{ post.dsc }}</div>
+			</div>
+			
+			
+			<script>
+			$(document).ready(function(){
+				$('.lightbox_trigger_{{post.id}}').click(function() {
+					$('#lightbox').show();
+					$('#gallery-container_{{post.id}}').show();
+				});
+				$('#lightbox').click(function() {
+					$('#lightbox').hide();
+					$('#gallery-container_{{post.id}}').hide();
+				});
+			});
+			</script>
+			
+			
+			
+			
 			{% endfor %}
 		</ul>
 	</div>
 	
-	
-	<script>
-		$(document).ready(function(){
-			$('.lightbox_trigger').click(function() {
-				$('#lightbox').show();
-				$('#gallery-container').show();
-			});
-			$('#lightbox').click(function() {
-				$('#lightbox').hide();
-				$('#gallery-container').hide();
-			});
-		
-		});
-	</script>
-	
 
 	
 	<div id="lightbox">
-	</div>
-	<div id="gallery-container">
-			<img src="">	
-			Hello this is where description and gallery will go.
 	</div>
 	
 	
