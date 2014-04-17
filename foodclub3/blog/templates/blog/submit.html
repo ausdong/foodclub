@@ -2,15 +2,7 @@
 
 {% block title %} Food Club {% endblock %}
 {% block content %}
-<div id="logo">
-	<div id="logotext">
-		<p> Food Club </p>
-	</div>
-</div>
-<div id="navbar">
-	<a href="/">Home</a>
-	<a href="#">Submit a Post</a>
-</div>	
+{% include 'blog/_header.html' %}
 	<form method="POST"	action="/submit/" enctype="multipart/form-data"> 
 	{% csrf_token %}
 	{{ form.as_p }}

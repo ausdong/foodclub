@@ -4,15 +4,7 @@
 {% block content %}
 
 
-	<div id="logo">
-		<div id="logotext">
-			<p> Food Club </p>
-		</div>
-	</div>
-	<div id="navbar">
-		<a href="/">Home</a>
-		<a href="submit">Submit a Post</a>
-	</div>	
+{% include 'blog/_header.html' %}
 
 
 
@@ -23,7 +15,15 @@
 			
 			<div class="gallery-container" id="gallery-container_{{ post.id }}" style="display:none;">
 			<img id="lightboximg" src="{{MEDIA_URL}}{{post.imgID.path}}" style="width:100%;">	
-				<div style="padding:10%;">{{ post.dsc }}</div>
+
+				<div style="width:100%; position:absolute;top:80%;background-color:#ff0099; color: white;">
+				<h2> {{post.name}} </h2>
+				<p style="color: ;">
+				{{ post.dsc }}
+								<a href="/{{post.name}}" style="text-decoration:none; color: gray;" >Read more...</a>
+
+				</p>
+				</div>
 			</div>
 			
 			
