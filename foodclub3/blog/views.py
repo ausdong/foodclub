@@ -10,6 +10,9 @@ def index(request):
 	posts = Post.objects.all()
 	# now return the rendered template
 	return render(request, 'blog/index.html', {'posts':posts})
+	
+def about(request):
+	return render(request, 'blog/About.html')
  
 def post(request, name):
 	# get the Post object
