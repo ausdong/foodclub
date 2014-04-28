@@ -13,17 +13,21 @@
 			{% for post in posts reversed %}
 			<li><img class="lightbox_trigger_{{ post.id }}" src="{{MEDIA_URL}}{{post.imgID.path}}" ></li>
 			
+			
+			
 			<div class="gallery-container" id="gallery-container_{{ post.id }}" style="display:none;">
 			<img id="lightboximg" src="{{MEDIA_URL}}{{post.imgID.path}}" style="width:100%;">	
 
 				<a  href="/{{post.name}}" style="text-decoration:none; color: #ff0099; ">
 				<h2> {{post.name}} </h2>
-
+				</a>
+				<img id="right_{{ post.id }}" style="position:absolute; bottom: 0px; right: 0px;" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-forward-128.png">
+				<img id="left_{{ post.id }}" style="position:absolute; bottom: 0px; left: 0px;" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-128.png">
 
 							
 
 				
-				</a>
+				
 			</div>
 			
 			
@@ -37,6 +41,27 @@
 					$('#lightbox').hide();
 					$('#gallery-container_{{post.id}}').hide();
 				});
+				$('#right_{{post.id}}').click(function() {
+					var post_id = {{post.id}} - 1;
+					if($('#gallery-container_' + post_id).length == 0) {
+						alert("No more photos right!");
+					} else {
+						$('#gallery-container_{{post.id}}').hide();
+						$('#gallery-container_' + post_id).show();
+					}
+				});
+				$('#left_{{post.id}}').click(function() {
+					var post_id = {{post.id}} + 1;
+					if($('#gallery-container_' + post_id).length == 0) {
+						alert("No more photos left!");
+					} else {
+						$('#gallery-container_{{post.id}}').hide();
+						$('#gallery-container_' + post_id).show();
+					}
+				});
+
+				
+				
 			});
 			</script>
 			
