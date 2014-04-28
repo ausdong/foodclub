@@ -11,9 +11,9 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
 	url(r'^admin/', include(admin.site.urls)),
-	url(r'^submit/', 'blog.views.submit'),
-	url(r'^About/', 'blog.views.about'),
+	url(r'^submit/', 'blog.views.submit', name='new'),
+	url(r'^About/', 'blog.views.about', name='about'),
 	url(r'^(?P<name>[\w\-]+)/$', 'blog.views.post'),
 	url(r'^(?P<name>[\w|\W]+)/$', 'blog.views.post'),
-	url(r'^$', 'blog.views.index'),
+	url(r'^$', 'blog.views.index', name='home1'),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

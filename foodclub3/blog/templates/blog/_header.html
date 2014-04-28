@@ -1,11 +1,18 @@
 	<div id="logo">
-		<div id="logotext">
-			<h1 > Food <span style="color: #ff0099;"> Club </span> </h1>
+		<div id="logotext" style="font-size: 36px; ">
+			 Food <span id="clubtxt" style="color: #ff0099;"> Club </span> 
 		</div>
 	</div>
 	<div id="navbar"  >
-		<a style="text-decoration:none; margin-left: 10%;		color: black;" href="/">Home</a>
-		<a style="text-decoration:none; margin-left: 10%;		color: black;" href="submit">New</a>
-		<a style="text-decoration:none; margin-left: 10%;		color: black;" href="https://www.butterhub.org">Butter</a>
-		<a style="text-decoration:none; margin-left: 10%;		color: black;" href="About">About Us</a>
+		<a style="text-decoration:none;		color: black;" href="{% url "home1" %}">Home</a>
+		<a style="text-decoration:none; margin-left: 10%;		color: black;" href="{% url "new" %}">New</a>
+		<a style="text-decoration:none; margin-left: 10%;		color: black;" href="https://www.butterhub.org">Inspiration</a>
+		<a style="text-decoration:none; margin-left: 10%;		color: black;" href="{%url "about" %}">About Us</a>
 	</div>	
+	
+	
+	
+<style>
+
+
+</style>

@@ -16,14 +16,14 @@
 			<div class="gallery-container" id="gallery-container_{{ post.id }}" style="display:none;">
 			<img id="lightboximg" src="{{MEDIA_URL}}{{post.imgID.path}}" style="width:100%;">	
 
-				<div style="width:100%; position:absolute;top:80%;background-color:#ff0099; color: white;">
+				<a  href="/{{post.name}}" style="text-decoration:none; color: #ff0099; ">
 				<h2> {{post.name}} </h2>
-				<p style="color: ;">
-				{{ post.dsc }}
-								<a href="/{{post.name}}" style="text-decoration:none; color: gray;" >Read more...</a>
 
-				</p>
-				</div>
+
+							
+
+				
+				</a>
 			</div>
 			
 			

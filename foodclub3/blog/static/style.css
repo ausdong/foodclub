@@ -16,20 +16,26 @@
         margin: 28px  auto;
     }
 #navbar {
-	    height:50px;
+		margin-top: 10px;
         width: 100%;
         background-color:#e0e0e0;
         color:black;
-        margin-bottom:10px;
-		padding-top: 15px;
-		font-size: 22px;
+        margin-bottom:0px;
+		padding: 5px;
+		font-size: 12px;
+		text-align:center;
 
+}
+
+#navbar:a hover {
+	color:white;
 }
 
 #navbartxt {
 
 		margin-left:14%;
 }
+
 #logo {
 		width: 100%;
 		position:relative;
@@ -95,16 +101,14 @@ ul#grid {
 	.gallery-container {
 		position:fixed; /* keeps the lightbox window in the current viewport */
 		background-color: white;
-		height:70%;
-		top: 10%;
-		margin-left:20%;
-		margin-right:20%;
+		top:10%;
+		left:10%;
+		width: 80%;
 		border-radius: 10px;
 		border: 15px solid gray;
 		z-index:999;
 		display:none;
 		clear:both;
-		overflow:hidden;
 	}
 	
 
