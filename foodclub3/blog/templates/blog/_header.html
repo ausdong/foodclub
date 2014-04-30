@@ -3,12 +3,41 @@
 			 Food <span id="clubtxt" style="color: #ff0099;"> Club </span> 
 		</div>
 	</div>
+	<style>
+		#navbar a{
+			text-decoration:none;
+			color: black;
+			font-size: 2em;
+			margin: 5%;
+		}
+		#navbar a:hover{
+			color: #ff0099;
+		}
+	</style>
+	
 	<div id="navbar"  >
-		<a style="text-decoration:none;		color: black;" href="{% url "home1" %}">Home</a>
-		<a style="text-decoration:none; margin-left: 10%;		color: black;" href="{% url "new" %}">New</a>
-		<a style="text-decoration:none; margin-left: 10%;		color: black;" href="https://www.butterhub.org">Inspiration</a>
-		<a style="text-decoration:none; margin-left: 10%;		color: black;" href="{%url "about" %}">About Us</a>
+		<a href="{% url "home1" %}">Home</a>
+		<a href="{% url "new" %}">New</a>
+		<a href="https://www.butterhub.org">Inspiration</a>
+		<a href="{%url "about" %}">About Us</a>
 	</div>	
+	
+	
+	<script>
+	$(document).ready( function() {
+		$('#navbar a').hover(function() {
+			$('#logotext').css('color', '#ff0099');
+			$('#clubtxt').css('color', 'black');
+		
+		}, function() {
+			$('#logotext').css('color', 'black');
+			$('#clubtxt').css('color', '#ff0099');
+		
+		});
+	
+	});
+	
+	</script>
 	
 	
 	

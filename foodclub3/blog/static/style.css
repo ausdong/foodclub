@@ -99,11 +99,11 @@ ul#grid {
 		display:none;
 	}
 	.gallery-container {
-		position:fixed; /* keeps the lightbox window in the current viewport */
+		position:absolute; /* keeps the lightbox window in the current viewport */
 		background-color: white;
 		top:10%;
-		left:10%;
-		width: 80%;
+		left:20%;
+		width: 60%;
 		border-radius: 10px;
 		border: 15px solid gray;
 		z-index:999;
