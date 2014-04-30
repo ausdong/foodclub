@@ -4,22 +4,26 @@ from django.core.urlresolvers import reverse
 from django.utils import timezone
 from blog.models import Post, Category, Image
 from .forms import UploadForm
-     
+
+#home page
 def index(request):
 	# get the blog posts that are published
 	posts = Post.objects.all()
 	# now return the rendered template
 	return render(request, 'blog/index.html', {'posts':posts})
 	
+#about us page
 def about(request):
 	return render(request, 'blog/About.html')
- 
+
+#individual blog post
 def post(request, name):
 	# get the Post object
 	post = get_object_or_404(Post, name=name)
 	# now return the rendered template
 	return render(request, 'blog/post.html', {'post': post})
 
+#new blog post page and upload form
 def submit(request):
 	if request.method == 'POST':
 		form = UploadForm(request.POST, request.FILES)
