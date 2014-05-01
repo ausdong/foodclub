@@ -49,20 +49,40 @@
         margin-left: 15px;
         margin-top: 1px;
 }	
-ul#grid {
+#grid {
 		padding: 0;
 		list-style: none;
 		margin: 20px auto 0;
 		width: 100%; 
 }
 
-#grid li {
+.onebox {
 		float: left;
 		padding: 0;
 		margin: 15px;
-		width:262px;
-		height:197px;
+		width:250px;
+		height:180px;
+		position:relative;
+		overflow:hidden;
+		border: 1px solid white;
+
 } 
+.box-inside {
+	text-align:center;
+	position:absolute;
+	top: 80px;
+	font-size: 24px;
+	color: #ff0099;
+	width: 250px;
+	display:none;
+}
+
+.onebox:hover {
+	border: 1px solid #ff0099;
+}
+.onebox img:hover {
+	opacity:.5;
+}
 .portfolio {
 		padding: 20px;
 		margin-left: 0px; margin-right: 0px;
@@ -70,15 +90,14 @@ ul#grid {
 		font-family: 'GraublauWeb', arial, serif; 
 		text-align: center;
 }
-#grid li a:hover img {
+.onebox a img:hover {
 	opacity:0.7;  filter:alpha(opacity=70);
 }
-#grid li img {
+.onebox img {
 	background-color: black;
 	padding:0; 
 	margin: 0;
-	max-width: 100%;
-	max-height: 100%;
+	width: 120%;
 }
 
 #postimg  img{
@@ -98,14 +117,46 @@ ul#grid {
 		z-index:998;
 		display:none;
 	}
-	.gallery-container {
-		position:absolute; /* keeps the lightbox window in the current viewport */
+	
+	.floating_name {
+		position:fixed;
+		top: 80%;
+		text-align:center;
+		width:30%;
+		font-size:36px;
+		height: 46px;
+		padding-top: 12px;
 		background-color: white;
-		top:10%;
-		left:20%;
-		width: 60%;
+		border: 3px solid gray;
+		border-radius:5px;
+		opacity: .4;
+		margin-left:10%;
+		
+	}
+	
+	.iconj:hover {
+	-webkit-filter: invert(100%); 
+	}
+	
+	.floating_name:hover {
+		opacity:1;
+		background-color: #ff0099;
+		color:white;
+	}
+	
+	.arrows:hover {
+ -webkit-filter: invert(100%);  
+	}
+	.gallery-container {
+		position:fixed; /* keeps the lightbox window in the current viewport */
+		background-color: white;
+		top:25%;
+		left:25%;
+		width: 50%;
+		height:50%;
 		border-radius: 10px;
 		border: 15px solid gray;
+		overflow:hidden;
 		z-index:999;
 		display:none;
 		clear:both;

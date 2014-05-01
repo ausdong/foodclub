@@ -9,20 +9,22 @@
 
 
 	<div class="portfolio">
-		<ul id="grid">
+		<div id="grid">
 			{% for post in posts reversed %}
-			<li><img class="lightbox_trigger_{{ post.id }}" src="{{MEDIA_URL}}{{post.imgID.path}}" ></li>
+			<div class="onebox" ><img id="lightbox_trigger_{{ post.id }}" src="{{MEDIA_URL}}{{post.imgID.path}}" >
+			<div class="box-inside" id="box_inside_{{post.id}}">{{post.name}}</div>
+			</div>
 			
 			
 			
 			<div class="gallery-container" id="gallery-container_{{ post.id }}" style="display:none;">
-			<img id="lightboximg" src="{{MEDIA_URL}}{{post.imgID.path}}" style="width:100%;">	
+			<img id="lightboximg" src="{{MEDIA_URL}}{{post.imgID.path}}" style="width:110%;">	
 
 				<a  href="/{{post.name}}" style="text-decoration:none; color: #ff0099; ">
-				<h2> {{post.name}} </h2>
+				<div class="floating_name"> {{post.name}} </div>
 				</a>
-				<img id="right_{{ post.id }}" style="position:absolute; bottom: 0px; right: 0px;" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-forward-128.png">
-				<img id="left_{{ post.id }}" style="position:absolute; bottom: 0px; left: 0px;" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-128.png">
+				<img id="right_{{ post.id }}" class="arrows" style="position:absolute; top: 40%; right: 0px;" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-forward-128.png">
+				<img id="left_{{ post.id }}" class="arrows" style="position:absolute; top: 40%; left: 0px;" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-128.png">
 
 							
 
@@ -33,7 +35,7 @@
 			
 			<script>
 			$(document).ready(function(){
-				$('.lightbox_trigger_{{post.id}}').click(function() {
+				$('#lightbox_trigger_{{post.id}}').click(function() {
 					$('#lightbox').show();
 					$('#gallery-container_{{post.id}}').show();
 				});
@@ -59,6 +61,12 @@
 						$('#gallery-container_' + post_id).show();
 					}
 				});
+				$('#lightbox_trigger_{{post.id}}').hover(function() {
+					$('#box_inside_{{post.id}}').show();
+				}, function() {
+					$('#box_inside_{{post.id}}').hide();
+				});
+			
 
 				
 				
@@ -69,7 +77,7 @@
 			
 			
 			{% endfor %}
-		</ul>
+		</div>
 	</div>
 	
 

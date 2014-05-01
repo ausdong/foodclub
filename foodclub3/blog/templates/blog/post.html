@@ -4,23 +4,70 @@
 {% block content %}
 {% include 'blog/_header.html' %}
 	<hr>
-<body>
-	<h2>{{post.name}}</h2>
-	<div id="postimg">
-		<img src="{{MEDIA_URL}}{{post.imgID.path}}">
-	</div>
-    <br>
-	<article>
-		<p>
+<body style="text-align:center;">
+<div style="margin-top: 50px; margin-bottom: 10px;">
+	<span style="font-size:42px;">{{post.name}}</span> <span style="color:gray;">
+
 			Posted on
 				<time datetime="{{post.time|date:"c"}}">
 				{{post.time|date}}
 				</time>
-		</p>
+		</span>	</div>
+	<div id="postimg" style="position:relative;">
+		<img src="{{MEDIA_URL}}{{post.imgID.path}}">
+		<img id="right_{{ post.id }}" class="arrows" style="height:50px;width:50px;position:absolute;top: 40%; right: 0px;" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-forward-128.png">
+				<img id="left_{{ post.id }}" class="arrows" style="height:50px;width:50px;position:absolute;top: 40%; left: 0px;" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-128.png">
+
+							
+	</div>
+    <hr>
+	<article>
+	
+	<table style="text-align: left; margin-left: 35%;">
+	<tr>
+	<td style="font-size:25px;">Image Quality: </td>
+	<td>
+	<img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/rating.png" style="height: 20px; width: 20px;" class="iconj">
+		<img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/rating.png" style="height: 20px; width: 20px;" class="iconj">
+	<img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/rating.png" style="height: 20px; width: 20px;" class="iconj">
+	<img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/rating.png" style="height: 20px; width: 20px;" class="iconj">
+	<img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/rating.png" style="height: 20px; width: 20px;" class="iconj">
+</td>
+	</tr>
+	<tr>
+	<td style="font-size:25px;">Popularity: </td><td>
+	<img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/heart-128.png" style="height: 20px; width: 20px;" class="iconj">
+		<img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/heart-128.png" style="height: 20px; width: 20px;" class="iconj">
+	<img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/heart-128.png" style="height: 20px; width: 20px;" class="iconj">
+	<img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/heart-128.png" style="height: 20px; width: 20px;" class="iconj">
+	<img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/heart-128.png" style="height: 20px; width: 20px;" class="iconj">
+</td>
+	</tr>
+	<tr>
+	<td style="font-size:25px;">Chef Rating: </td><td>
+	<img src="https://cdn0.iconfinder.com/data/icons/ie_yummy/128/cake_20.png" style="height: 20px; width: 20px;" class="iconj">
+		<img src="https://cdn0.iconfinder.com/data/icons/ie_yummy/128/cake_20.png" style="height: 20px; width: 20px;" class="iconj">
+	<img src="https://cdn0.iconfinder.com/data/icons/ie_yummy/128/cake_20.png" style="height: 20px; width: 20px;" class="iconj">
+	<img src="https://cdn0.iconfinder.com/data/icons/ie_yummy/128/cake_20.png" style="height: 20px; width: 20px;" class="iconj">
+	<img src="https://cdn0.iconfinder.com/data/icons/ie_yummy/128/cake_20.png" style="height: 20px; width: 20px;" class="iconj">
+</td>
+	</tr>
+	</table>
+		<hr>
 		<p>
 			{{post.dsc}}
 		</p>
+		
+		<p>
+			This article is brought to you by {{post.name}} Holdings Inc. Copyright 2014 by its owners.
+		</p>
+		
+		<div style="width:100%;height:50px;background-color:#e0e0e0;">
+		
+		</div>
+
 	</article>
 </body>
+
 
 {% endblock %}
