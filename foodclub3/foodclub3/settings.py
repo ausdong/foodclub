@@ -39,7 +39,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-	'blog',
+	 'blog',
+	 'django.contrib.comments',
+	 'django.contrib.sites',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -86,3 +88,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+
+
+#site/comment settings
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'

@@ -3,7 +3,9 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.utils import timezone
 from blog.models import Post, Category, Image
-from .forms import UploadForm
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
+from .forms import UploadForm, UserForm
 
 #home page
 def index(request):
@@ -15,7 +17,20 @@ def index(request):
 #about us page
 def about(request):
 	return render(request, 'blog/About.html')
-
+	
+#registration page
+def register(request):
+	if request.method == 'POST':
+		form = UserForm(request.POST)
+		if form.is_valid():
+			user = User.objects.create_user(form.cleaned_data['username'], form.cleaned_data['email'], form.cleaned_data['password'])
+			user.save()
+			login(request, user)
+			return HttpResponseRedirect('/')
+	else:
+		form = UserForm()
+	return render(request, 'blog/register.html', {'form':form})
+	
 #individual blog post
 def post(request, name):
 	# get the Post object

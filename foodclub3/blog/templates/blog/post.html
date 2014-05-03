@@ -3,6 +3,7 @@
 {% block title %} Food Club {% endblock %}
 {% block content %}
 {% include 'blog/_header.html' %}
+{% load comments %}
 	<hr>
 <body style="text-align:center;">
 <div style="margin-top: 50px; margin-bottom: 10px;">
@@ -66,6 +67,28 @@
 		
 		</div>
 
+	</article>
+	<article>
+	{% if user.is_authenticated %}
+		<p> post a comment! </p>
+		{% get_comment_form for post as form %}
+		<form action="{% comment_form_target %}" method="POST">
+		{% csrf_token %}
+		{{ form.comment }}
+		<div style="display:none;">{{ form.honeypot }}</div>
+		{{ form.content_type }}
+		{{ form.object_pk }}
+		{{ form.timestamp }}
+		{{ form.security_hash }}
+		<input type="hidden" name="next" value="/{{post.name}}" />
+		<br>
+		<input type="submit" value="Add comment" id="id_submit" />
+		</form>
+	{% else %}
+		<p> you must login to comment </p>
+	{% endif %}
+	{% get_comment_count for post as comment_count %}
+	{% render_comment_list for post %}
 	</article>
 </body>
 
