@@ -23,8 +23,9 @@ def register(request):
 	if request.method == 'POST':
 		form = UserForm(request.POST)
 		if form.is_valid():
-			user = User.objects.create_user(form.cleaned_data['username'], form.cleaned_data['email'], form.cleaned_data['password'])
-			user.save()
+			newuser = User.objects.create_user(form.cleaned_data['username'], form.cleaned_data['email'], form.cleaned_data['password'])
+			newuser.save()
+			user = authenticate(username=newuser.username, password=newuser.password)
 			login(request, user)
 			return HttpResponseRedirect('/')
 	else:
