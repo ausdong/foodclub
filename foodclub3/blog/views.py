@@ -28,10 +28,9 @@ def submit(request):
 	if request.method == 'POST':
 		form = UploadForm(request.POST, request.FILES)
 		if form.is_valid():
-			#img = UploadForm(request.POST, request.FILES)
 			newimg = Image(path = form.cleaned_data['image'])
 			newimg.save()
-			p = Post(name = form.cleaned_data['name'], dsc = form.cleaned_data['description'], time = timezone.now(), imgID = newimg)
+			p = Post(name = form.cleaned_data['title'], dsc = form.cleaned_data['description'], time = timezone.now(), imgID = newimg)
 			p.save()
 			return HttpResponseRedirect('/')
 	else:

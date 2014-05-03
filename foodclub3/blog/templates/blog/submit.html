@@ -3,6 +3,15 @@
 {% block title %} Food Club {% endblock %}
 {% block content %}
 {% include 'blog/_header.html' %}
+	<p>All fields are required.</p>
+	<hr>
+	
+	{% if form.errors %}
+      <p style="color: red;">
+         Please correct the error{{form.errors|pluralize}} below.
+      </p>
+   {% endif %}
+	
 	<form method="POST"	action="/submit/" enctype="multipart/form-data"> 
 	{% csrf_token %}
 	{{ form.as_p }}
